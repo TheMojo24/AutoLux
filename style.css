@@ -1,350 +1,372 @@
-/* Header */
-.site-header {
-    background-color: #000;
-    color: white;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-  
-  .site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .nav {
-    width: 100%;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    margin-left: 450px;
-  }
-  
-  .nav-links li a {
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s;
-  }
-  
-  .nav-links li a:hover {
-    color: gold;
-  }
-  
-  .hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  /* Responsive Navigation */
-  @media (max-width: 768px) {
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      background-color: #000;
-      flex-direction: column;
-      width: 200px;
-      padding: 10px;
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .hamburger {
-      display: block;
-    }
-  }
-  
+/* =========================
+   Global
+========================= */
+:root{
+  --bg:#000;
+  --fg:#fff;
+  --muted:#bfbfbf;
+  --accent:#d4af37; /* gold */
+  --accent-dark:#b8860b;
+}
 
-/* Global Styles */
-body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: white;
-    background-color: #000;
-    line-height: 1.6;
-  }
-  a {
-    text-decoration: none;
-  }
-  /* Hero Section */
-  .hero {
-    background: url('images/RS5V2.jpg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 300px 20px;
-    position: relative;
-  }
-  /* Dark overlay to improve text readability */
-  .hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  /* Content positioned above the overlay */
-  .hero-content {
-    position: relative;
-    z-index: 1;
-  }
-  .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  .hero p {
-    font-size: 20px;
-  }
-  .cta-button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background-color: gold;
-    color: #000;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-  /* Quick Services Section */
-  .services {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px 20px;
-    background-color: #000;
-    color: white;
-  }
-  .service-item {
-    flex: 1;
-    max-width: 300px;
-    margin: 0 10px;
-    text-align: center;
-    color: inherit;
-    text-decoration: none;
-    padding: 20px;
-    border-radius: 10px;
-    transition: background 0.3s ease;
-  }
-  
-  .service-item:hover {
-    background-color: #333;
-    cursor: pointer;
-  }
-  
-  .service-item h3 {
-    margin-top: 15px;
-    font-size: 22px;
-  }
-  .service-item p {
-    font-size: 16px;
-  }
-  /* About Us Section */
-  .about {
-    padding: 60px 20px;
-    background-color: #000;
-    color: white;
-    text-align: center;
-  }
-  .about h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 18px;
-  }
-  /* Footer Section */
-  footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  footer a {
-    color: gold;
-  }
-  /* Page Layout & Content Sections */
-  .page-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .services {
-      flex-direction: column;
-    }
-    .service-item {
-      margin-bottom: 20px;
-    }
-  }
-  .page-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  
-  .plans-layout {
-    display: flex;
-    flex-wrap: wrap; /* stacks on small screens */
-    justify-content: space-between;
-    gap: 40px;
-  }
-  /* Container for the two columns */
-.plans-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* space between columns */
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-    flex-wrap: wrap; /* stacks columns on small screens */
-  }
-  
-  /* Each column */
-  .plan-section {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-    background: #f000;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  
-  /* Headings */
-  .plan-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Clean list styling */
-  .plan-list {
-    list-style: none;  /* removes bullets */
-    padding: 0;
-    margin: 0;
-  }
-  
-  .plan-list li {
-    padding-bottom: 15px; /* keeps spacing between items */
-    margin-bottom: 15px;
-    border: none; /* removes the divider lines */
-  }
-  
-  
-  .plan-list li:last-child {
-    border-bottom: none; /* removes last divider */
-  }
-  .get-started-container {
-    text-align: center; /* centers the button */
-    margin: 40px 0;     /* space above and below */
-  }
-  
-.get-started-btn {
-  display: inline-block;
-  background-color: gold;
-  color: black;
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  padding:0;
+}
+body{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--fg);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+a{ text-decoration:none; color:inherit }
+
+/* Utility */
+.container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+  width:100%;
+}
+
+/* =========================
+   Header / Navigation
+========================= */
+.site-header{
+  background-color: var(--bg);
+  color: var(--fg);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #111;
+}
+
+.logo{
+  font-size: 24px;
   font-weight: bold;
-  padding: 15px 30px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 18px;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+.nav{ position:relative; margin-left:auto; }
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+  padding:0;
+  margin:0;
+  align-items:center;
+}
+.nav-links li a{
+  color: var(--fg);
+  font-weight:500;
+  padding:8px 6px;               /* improves tap target on desktop */
+  display:inline-block;
+  transition:color .2s ease;
+}
+.nav-links li a:hover{ color: var(--accent); }
+
+/* Hamburger (hidden on desktop) */
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color: var(--fg);
+  padding:6px 8px;
+  margin-left: 10px;
+  border-radius:8px;
+  user-select:none;
+}
+
+/* =========================
+   Hero
+========================= */
+.hero{
+  background: url('images/RS5V2.jpg') center/cover no-repeat;
+  color: var(--fg);
   text-align: center;
-  border: none; /* Removes default button border */
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 300px 20px;
+  position: relative;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,0.5);
+}
+.hero-content{ position:relative; z-index:1; }
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+.hero p{ font-size:20px; }
+.cta-button{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 30px;
+  background-color: var(--accent);
+  color:#000;
+  font-weight:bold;
+  border-radius:8px;
+  transition:background-color .2s ease, color .2s ease, transform .05s ease;
+}
+.cta-button:hover{ background-color: var(--accent-dark); color:#fff; }
+.cta-button:active{ transform: translateY(1px); }
+
+/* =========================
+   Services (Home cards)
+========================= */
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  padding:60px 20px;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+.service-item{
+  flex: 1 1 260px;       /* responsive card width */
+  max-width: 300px;
+  text-align:center;
+  color:inherit;
+  padding:20px;
+  border-radius:12px;
+  transition: background .2s ease, transform .1s ease;
+  border:1px solid #111;
+}
+.service-item:hover{ background-color:#141414; transform: translateY(-2px); }
+.service-item img{
+  width:100%;
+  height:auto;
+  max-width:320px;
+  border-radius:10px;
+}
+.service-item h3{ margin-top:15px; font-size:22px; }
+.service-item p{ font-size:16px; color: var(--muted); }
+
+/* =========================
+   About / Generic sections
+========================= */
+.about{
+  padding:60px 20px;
+  background-color: var(--bg);
+  color: var(--fg);
+  text-align:center;
+}
+.about h2{ font-size:36px; margin-bottom:20px; }
+.about p{
+  max-width:800px;
+  margin:0 auto;
+  font-size:18px;
+  color: var(--muted);
 }
 
-.get-started-btn:hover {
-  background-color: darkgoldenrod;
-  color: white;
+/* =========================
+   Footer
+========================= */
+footer{
+  background-color: var(--bg);
+  color: var(--fg);
+  text-align:center;
+  padding:20px;
+  border-top: 1px solid #111;
+}
+footer a{ color: var(--accent); }
+
+/* =========================
+   Page Layout & Content
+========================= */
+.page-content{
+  width:100%;
+  max-width:1200px;
+  margin:0 auto;
+  padding:40px 20px;
+  text-align:center;
+}
+.intro-text{ color: var(--muted); }
+
+/* Plans: two columns that wrap nicely */
+.plans-container{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:40px;
+  max-width:1200px;
+  margin:60px auto;
+  padding:0 20px;
+  flex-wrap:wrap;  /* stacks on small screens */
 }
 
-  
-  .get-started-btn:hover {
-    background-color: darkgoldenrod;
-    color: white;
+/* Each column */
+.plan-section{
+  flex:1 1 420px;
+  max-width:520px;
+  background: transparent;       /* fixed invalid #f000 */
+  padding:30px;
+  border-radius:12px;
+  border:1px solid #111;
+}
+.plan-section h2{
+  text-align:center;
+  margin:0 0 20px 0;
+}
+
+.plan-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.plan-list li{
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border:none;  /* no dividers */
+}
+.plan-list li:last-child{ margin-bottom:0; }
+.item-description{
+  font-size:14px;
+  color:#9a9a9a;
+  margin-top:5px;
+  line-height:1.6;
+}
+
+.get-started-container{
+  text-align:center;
+  margin:40px 0;
+}
+.get-started-btn{
+  display:inline-block;
+  background-color: var(--accent);
+  color:#000;
+  font-weight:bold;
+  padding:15px 30px;
+  border-radius:8px;
+  font-size:18px;
+  text-align:center;
+  border:none;
+  cursor:pointer;
+  transition: background-color .2s ease, color .2s ease, transform .05s ease;
+}
+.get-started-btn:hover{ background-color: var(--accent-dark); color:#fff; }
+.get-started-btn:active{ transform: translateY(1px); }
+
+/* Page-specific list cleanup */
+.vehicle-sourcing .plan-list li,
+.mobile-detailing .plan-list li,
+.maintenance-tracking .plan-list li,
+.vehicle-protection .plan-list li{
+  border:none;
+}
+
+/* =========================
+   Contact Form
+========================= */
+.contact-form{
+  max-width:600px;
+  margin:0 auto;
+  text-align:left;
+}
+.contact-form label{
+  display:block;
+  margin-top:15px;
+  font-weight:bold;
+  color:#ffffff;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:12px 10px;
+  margin-top:5px;
+  border:1px solid #333;
+  border-radius:8px;
+  font-size:15px;
+  background:#0a0a0a;
+  color:#fff;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: var(--accent);
+  outline:none;
+}
+.contact-form button{ margin-top:20px; }
+
+/* =========================
+   Responsive Rules
+========================= */
+
+/* Tablet and down */
+@media (max-width: 992px){
+  .hero{ padding: 220px 20px; }
+  .hero h1{ font-size: 36px; }
+  .hero p{ font-size: 18px; }
+}
+
+/* Mobile nav + small screens */
+@media (max-width: 768px){
+  /* Header */
+  .hamburger{ display:block; }
+  .nav-links{
+    display:none;               /* hidden until toggled */
+    flex-direction:column;
+    position:absolute;
+    top:100%;
+    right:0;
+    width: 260px;
+    background: #000;
+    padding:10px 0;
+    border:1px solid #111;
+    border-top:none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index:1000;
   }
-  .item-description {
-    font-size: 14px;
-    color: #999; /* darker gray for better contrast */
-    margin-top: 5px;
-    line-height: 1.5;
+  .nav-links.show{ display:flex; }
+  .nav-links li a{
+    display:block;
+    padding:12px 16px;          /* big tap targets */
   }
-  
-  .vehicle-sourcing .plan-list li {
-    border: none; /* removes the lines ONLY for vehicle-sourcing.html */
-    padding-bottom: 15px;
-    margin-bottom: 15px;
+
+  /* Hero */
+  .hero{ padding: 160px 16px; }
+  .hero h1{ font-size: 28px; }
+  .hero p{ font-size: 16px; }
+
+  /* Services */
+  .services{
+    padding: 40px 16px;
+    gap:16px;
   }
-  .mobile-detailing .plan-list li {
-    border: none; /* No dividers between items */
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-  }
-  .maintenance-tracking .plan-list li {
-    border: none; /* Removes lines for this page only */
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-  }
-  .vehicle-protection .plan-list li {
-    border: none; /* Removes dividers only on this page */
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-  }
-  /*contact section */
-  .contact-form {
-    max-width: 600px;
+  .service-item{
     margin: 0 auto;
-    text-align: left;
+    max-width: 95%;
   }
-  
-  .contact-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #FFFFFF;
+
+  /* Plans/columns */
+  .plans-container{
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    padding: 0 16px;
+    margin: 40px auto;
   }
-  
+  .plan-section{ max-width:95%; padding:20px; }
+
+  /* Page content padding */
+  .page-content{ padding: 28px 16px; }
+
+  /* Contact form inputs */
   .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 15px;
-    box-sizing: border-box;
-  }
-  
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-color: gold;
-    outline: none;
-  }
-  
-  .contact-form button {
-    margin-top: 20px;
-  }
-  
+  .contact-form textarea{ font-size:14px; }
+}
+
+/* Very small devices */
+@media (max-width: 420px){
+  .logo{ font-size:20px; }
+  .hero{ padding: 130px 14px; }
+  .hero h1{ font-size:24px; }
+  .hero p{ font-size:15px; }
+  .get-started-btn, .cta-button{ padding:12px 20px; font-size:16px; }
+}
